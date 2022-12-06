@@ -36,53 +36,19 @@ class Solution:
 
         l1 = 0
         l2 = 0
-        if len(nums) == 1:
-            if nums[0] == 1:
-                return 1
-            else :
-                return 0
-        elif len(nums) > 1 :
-            for i in range(len(nums)-1):
-                if nums[i] == 1:
-                    print("h")
-                    l1 += 1
-                    if (nums[i] == nums[i+1] ):
-                        l1 +=1
-                    else:
-                        if l2 < l1:
-                            l2 = l1
-                            l1 = 0
-                        else: 
-                            l1 = 0
-                    print("a:",l1, l2)
-                
-                else : 
-                    print("b:",l1, l2)
-                    if l2 < l1:
-                        l2 = l1
-                        l1 = 0
-                    else: 
-                        l1 = 0
 
-            if l1 > l2 :
-                if l1  > 0:
-                    if l1 == 1:
-                        return 1
-                    else :
-                        return l1 -1
-                else :
-                    return 0
-            elif l1 == l2:
-                return l1
-            else:
-                if l2 > 0:
-                    if l2 ==1:
-                        return 1
-                    else:
-                        return l2 -1
-                else :
-                    return 0
-        
+        for i in range(len(nums)):
+            if nums[i] == 1:
+                l1 += 1 
+            else : 
+                if l2 < l1:
+                    l2 = l1
+                    l1 = 0
+                else: 
+                    l1 = 0
+
+
+        return (max(l1,l2))
     
         
 s = Solution()

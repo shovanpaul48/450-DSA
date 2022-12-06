@@ -14,4 +14,6 @@ def FindMissingNum(a,N):
     return x 
 
 print(FindMissingNum([1, 2, 4, 6, 3, 7, 8], 8))
+
+
         

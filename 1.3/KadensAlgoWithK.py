@@ -4,24 +4,24 @@
 # complexity : O(n)
 
 
-def KadensAlgo(a,key):
+def KadensAlgoWithK(a,key):
     l = len(a)
-    j,sum,maximum = 0 ,0,0
-    for i in range (l):
-        sum = sum  + a[i]
-        
-        if sum < 0:
-            sum = 0
-            j = i +1
+    start,sum,maxlen= 0 ,0,0
+    end = -1
+    while (start < l) :
+        while ((end + 1 < l) and (sum + a[end + 1] <= key)) :
+            sum += a[end + 1]
 
-        elif sum > maximum:
-            maximum = sum 
-            k = i
+        if (sum == key):
+            maxLength = max(maxLength, (end - start + 1))
 
-    print("Max sum :",maximum," Range :",j,k)
+        sum -= a[start]
+        start += 1
+    
+    return maxlen
 
 # KadensAlgo([-13 ,0 ,6 ,15 ,16 ,2 ,15, -12 ,17 ,-16 ,0, -3, 19, -3, 2 ,-9, -6])
-KadensAlgo([-2,-3,0,-9,4,-1,-2,1,5,-3])
+print(KadensAlgoWithK([-2,-3,0,-9,4,-1,-2,1,5,-3],0))
         
 
 

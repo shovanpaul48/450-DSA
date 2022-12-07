@@ -12,7 +12,11 @@ def TwoSum(a,k):
         n = str(i)
         # print(j)
         if l in map.keys():
-            return (map[l],l)
+            # return (int(map[l]),int(l))
+            temp = []
+            temp.append(int(map[l]))
+            temp.append(i)
+            return temp
         else:
             map[m] = n
 

@@ -65,10 +65,9 @@ def addlinkedlists( l1:LinkedList,l2:LinkedList):
             print("sum",sum, k,s1,s2)
         elif sum < 10 :
             k =0
-
         if c == 0:
             temp  = LinkedList(sum)
-            c += 1
+            c = 1
 
         else:
             temp.append(sum)
